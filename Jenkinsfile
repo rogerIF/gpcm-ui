@@ -14,13 +14,13 @@ pipeline {
                git branch: 'release-0.4', credentialsId: 'd3e953c3-60e2-43c7-928e-a787a4600c3a', url: 'https://github.com/gwssi-projects/gpcm-ui.git'
             }
         }*/
-        stage('±àÒë') {
+        stage('¿¿') {
             steps {
               sh 'npm install'
               sh 'npm run build'
             }
         }
-        stage('¹¹½¨¾µÏñ') {
+        stage('¿¿¿¿') {
             steps {
                 script {
                     docker.withRegistry("http://${repo}") {
@@ -29,7 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('²¿Êðµ½¼¯Èº') {
+        stage('¿¿¿¿') {
             steps {
                 sh 'cp -r /jenkins/tools/.kube ~/.kube'
                 sh "kubectl set image deployment/gpcm-ui gpcm-ui=${repo}/${imageName}"
