@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gpcm-ui-service
+spec:
+  type: ClusterIP
+  ports:
+   - port: 80
+     targetPort: 8080
+  selector:
+    app: gpcm-ui
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gpcm-ui
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gpcm-ui
+    spec:
+      containers:
+       - name: gpcm-ui
+         image: aliyun.docker.registry:5000/gwssi/gpcm-ui:v0.0.4.9
+         ports:
+         - containerPort: 8080
