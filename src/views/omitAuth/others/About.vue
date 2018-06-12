@@ -1,30 +1,22 @@
 <template>
-  <div class="about">
-    <h1>欢迎进入大数据管理平台</h1>
-    <h4>我们使用的技术如下：</h4>
-    <el-table
-            :data="tableData2"
-            style="width: 100%"
-            :row-class-name="tableRowClassName">
-      <el-table-column
-              prop="date"
-              label="使用技术"
-              >
-      </el-table-column>
-      <el-table-column
-              prop="name"
-              label="版本"
-              >
-      </el-table-column>
-      <el-table-column
-              label="链接">
-        <template slot-scope="scope">
-         <a :href="scope.row.address">{{scope.row.address}}</a>
-        </template>
-      </el-table-column>
-    </el-table>
+    <div class="about">
+        <h1>欢迎进入大数据管理平台</h1>
+        <h4>我们使用的技术如下：</h4>
+        <el-table :data="tableData2" style="width: 100%" :row-class-name="tableRowClassName">
+            <el-table-column  prop="date" label="使用技术" >
+            </el-table-column>
 
-  </div>
+            <el-table-column prop="name" label="版本">
+            </el-table-column>
+
+            <el-table-column label="链接">
+                <template slot-scope="scope">
+                    <a :href="scope.row.address">{{scope.row.address}}</a>
+                </template>
+            </el-table-column>
+        </el-table>
+
+    </div>
 </template>
 <script>
     export default {
@@ -52,7 +44,7 @@
                     date: 'ElementUI',
                     name: '2.4.0',
                     address: 'http://element-cn.eleme.io/#/zh-CN/',
-                },{
+                }, {
                     date: '...',
                     name: '...',
                     address: '',
@@ -62,11 +54,11 @@
     }
 </script>
 <style>
-  .el-table .warning-row {
-    background: oldlace;
-  }
+    .el-table .warning-row {
+        background: oldlace;
+    }
 
-  .el-table .success-row {
-    background: #f0f9eb;
-  }
+    .el-table .success-row {
+        background: #f0f9eb;
+    }
 </style>

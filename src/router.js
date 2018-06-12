@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Router from "vue-router";
-import LearnVue from "./views/LearnVue";
+import LearnVue from "./views/omitAuth/others/LearnVue";
 import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Monitor from "./views/Monitor.vue";
-import SystemManage from "./views/SystemManage.vue";
+import About from "./views/omitAuth/others/About.vue";
+import Monitor from "./views/omitAuth/others/Monitor.vue";
+import SystemManage from "./views/omitAuth/others/SystemManage.vue";
 
 Vue.use(Router);
 

@@ -11,7 +11,7 @@ export default {
   name: "GWMain",
     mounted:function () {
       //默认跳转到关于页面
-        this.$router.push('/about')
+        this.$router.push('/others/about')
     }
 };
 </script>

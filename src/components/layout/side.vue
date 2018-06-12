@@ -6,7 +6,7 @@
       <span class="project-name" v-show="!isCollapse">{{projectName}}</span>
       <i class="fa collapse-icon" @click='sideWidthChange' :class="isCollapse?'fa-bars':'fa-outdent'"></i>
     </div>
-    <el-menu default-active="/about"
+    <el-menu default-active="/others/about"
              background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
              @open="handleOpen" @close="handleClose" :collapse="isCollapse" router>
       <el-submenu index="1">
@@ -15,13 +15,13 @@
           <span slot="title">学习模块</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/learnVue">学习VUE</el-menu-item>
-          <el-menu-item index="/about">关于</el-menu-item>
+          <el-menu-item index="/others/learnVue">学习VUE</el-menu-item>
+          <el-menu-item index="/others/about">关于</el-menu-item>
         </el-menu-item-group>
 
         <el-submenu index="1-1">
           <span slot="title">二级菜单</span>
-          <el-menu-item index="/monitor">实时监控</el-menu-item>
+          <el-menu-item index="/others/monitor">实时监控</el-menu-item>
         </el-submenu>
       </el-submenu>
 
@@ -30,7 +30,7 @@
           <i class="el-icon-setting"></i>
           <span slot="title">管理模块</span>
         </template>
-        <el-menu-item index="/systemManage">
+        <el-menu-item index="/others/systemManage">
           <span slot="title">系统管理</span>
         </el-menu-item>
       </el-submenu>
