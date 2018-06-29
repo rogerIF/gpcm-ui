@@ -1,10 +1,10 @@
 <template>
-    <div>登陆页面</div>
+    <div>日志页面-需要授权获取</div>
 </template>
 
 <script>
     export default {
-        name: "login"
+        name: "log.vue"
     }
 </script>
 

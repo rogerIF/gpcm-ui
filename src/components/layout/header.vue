@@ -3,7 +3,9 @@
   <div class="gw-header">
     <div class="welcome">欢迎您:
       <span class="username">{{userName}}</span>
+      <el-button type="warning" size="mini" class="logout"  icon="fa fa-sign-out" @click="logout">退出</el-button>
     </div>
+
   </div>
 </template>
 
@@ -14,7 +16,28 @@ export default {
       return{
           userName:'admin'
       }
+    },
+    methods:{
+      logout(){
+          this.$confirm('即将退出登录, 是否继续?', '提示', {
+              confirmButtonText: '确定',
+              cancelButtonText: '取消',
+              type: 'warning'
+          }).then(() => {
+              sessionStorage.removeItem('username');
+              this.$router.push('/login');
+              this.$message({
+                  type: 'success',
+                  message: '退出成功!'
+              });
+          }).catch(() => {
+             console.log("取消退出")
+          });
 
+      }
+    },
+    mounted:function () {
+        this.userName = sessionStorage.getItem('username')
     }
 };
 </script>
@@ -27,6 +50,10 @@ export default {
 
     .username{
       font-weight: bold;
+      margin-right: 10px;
+    }
+    .logout{
+      color:#000;
     }
   }
 

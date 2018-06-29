@@ -1,13 +1,11 @@
 <template>
-    <div>404</div>
+    <p class="page-container">页面不存在</p>
 </template>
 
-<script>
-    export default {
-        name: "notFound"
-    }
-</script>
-
 <style scoped>
-
+    .page-container {
+        font-size: 20px;
+        text-align: center;
+        color: rgb(98, 104, 218);
+    }
 </style>

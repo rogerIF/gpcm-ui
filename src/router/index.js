@@ -2,6 +2,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
+import login from "../views/omitAuth/login/Login.vue";
+import notFound from "../views/omitAuth/notFound/notFound.vue";
 import createRouters from "./createRouters";
 Vue.use(Router);
 
@@ -13,6 +15,17 @@ export default new Router({
             component: Home,
             children:createRouters()
         },
+        {
+            path: "/login",
+            name: "login",
+            component: login,
+        },
+        {
+            path:"*",
+            name:"all",
+            component: notFound
+        }
+
 
     ]
 });
